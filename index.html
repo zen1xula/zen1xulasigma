@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>zen1xula</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div id="particles-js"></div>
+    <div class="profile-card">
+      <div class="avatar-container">
+        <a
+          href="https://github.com/zen1xula"
+          target="_blank"
+          class="avatar-link"
+        >
+          <img
+            class="avatar"
+            src="https://avatars.githubusercontent.com/u/131604745"
+            alt="zen1xula avatar"
+          />
+          <i class="fab fa-github avatar-icon"></i>
+        </a>
+      </div>
+      <div class="username">zen1xula</div>
+      <div class="handle">@zen1xula</div>
+      <div class="info">
+        <p class="date-tooltip" data-tooltip="">
+          📍 10.08
+          <span class="tooltip-text"></span>
+        </p>
+        <p>📍 html, css</p>
+      </div>
+      <div class="social-icons">
+        <a href="https://t.me/zen1xula" target="_blank" title="Telegram"
+          ><i class="fab fa-telegram"></i
+        ></a>
+        <a
+          href="https://discord.com/users/zen1xula"
+          target="_blank"
+          title="Discord"
+          ><i class="fab fa-discord"></i
+        ></a>
+        <a
+          href="https://www.tiktok.com/@zenixula"
+          target="_blank"
+          title="TikTok"
+          ><i class="fab fa-tiktok"></i
+        ></a>
+        <a
+          href="https://steamcommunity.com/id/zen1xula"
+          target="_blank"
+          title="Steam"
+          ><i class="fab fa-steam"></i
+        ></a>
+        <a href="mailto:zen1xula@proton.me" title="Email"
+          ><i class="fas fa-envelope"></i
+        ></a>
+        <a href="https://github.com/zen1xula" target="_blank" title="GitHub"
+          ><i class="fab fa-github"></i
+        ></a>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+    <script>
+      tsParticles.load("particles-js", {
+        particles: {
+          number: {
+            value: 150,
+            density: { enable: true, value_area: 800 },
+          },
+          color: {
+            value: ["#4b5e6b", "#374151"],
+          },
+          shape: {
+            type: ["circle", "square", "star"],
+            stroke: { width: 0 },
+          },
+          opacity: {
+            value: 0.7,
+            random: true,
+            anim: { enable: true, speed: 0.5, opacity_min: 0.3, sync: false },
+          },
+          size: {
+            value: 3,
+            random: true,
+            anim: { enable: true, speed: 2, size_min: 1, sync: false },
+          },
+          rotate: {
+            value: 0,
+            random: true,
+            direction: "random",
+            animation: { enable: true, speed: 1, sync: false },
+          },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#2b2b3b",
+            opacity: 0.4,
+            width: 0.8,
+          },
+          move: {
+            enable: true,
+            speed: 1.5, // Медленное хаотичное движение
+            direction: "none",
+            random: true,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
+            attract: { enable: false },
+          },
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: { enable: true, mode: "bubble" }, // Увеличение при ховере
+            onclick: { enable: true, mode: "repulse" },
+            resize: true,
+          },
+          modes: {
+            bubble: { distance: 200, size: 6, duration: 0.3, opacity: 0.8 },
+            repulse: { distance: 200, duration: 0.4 },
+          },
+        },
+        retina_detect: true,
+      });
+
+      // Расчет дней до 10 августа
+      function daysUntilAugust10() {
+        const today = new Date();
+        const currentYear = today.getFullYear();
+        let targetDate = new Date(currentYear, 7, 10); // 10 августа (месяцы 0-11)
+        if (today > targetDate) {
+          targetDate = new Date(currentYear + 1, 7, 10);
+        }
+        const diffTime = targetDate - today;
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        return diffDays;
+      }
+
+      const dateTooltip = document.querySelector(".date-tooltip");
+      const tooltipText = dateTooltip.querySelector(".tooltip-text");
+      tooltipText.textContent = `${daysUntilAugust10()} days until 10.08`;
+    </script>
+  </body>
+</html>
